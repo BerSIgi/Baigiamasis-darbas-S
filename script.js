@@ -80,3 +80,4 @@ function validate() {
     }
     return isValid;
 }
+function validate() {}
