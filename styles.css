@@ -1,0 +1,74 @@
+@media only screen and (max-width: 768px) {
+    .deviceWidth {width:280px!important; padding:0;}	
+  .center {text-align: center!important;}
+}
+
+body > table{
+    width: 90%;
+    background-image: url('melsvas.jpg');
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+table{
+    border-collapse: collapse;
+}
+table.list{
+    width:90%;
+    position: center;
+}
+
+td{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    color: rgb(23, 5, 5);
+}
+tr:nth-child(even),table.list thead>tr {
+    background-color: #fcfbfb;
+}
+
+input[type=text], input[type=email], input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit]{
+    width: 30%;
+    background-color: #ddd;
+    color: rgb(7, 3, 3);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+form div.form-action-buttons{
+    text-align: center;
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #242442;
+    margin-right: 4px;
+}
+
+label.validation-error{
+    color:   red;
+    margin-left: 5px;
+}
+
+.hide{
+    display:none;
+}
