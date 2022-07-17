@@ -1,6 +1,3 @@
-const host = 'localhost';
-const port = 5500;
-
 const selectedRow = null
 
 function onFormSubmit() {
@@ -44,7 +41,7 @@ function resetForm() {
     document.getElementById("surname").value = "";
     document.getElementById("email").value = "";
     document.getElementById("age").value = "";
-    selectedRow = null;
+    // selectedRow = null;
 }
 
 function onEdit(td) {
@@ -61,28 +58,23 @@ function updateRecord(formData) {
     selectedRow.cells[3].innerHTML = formData.age;
 }
 
-function onEdit(td) {
+function onEdit(tr) {
     if (confirm('Taisyti įrašą?')) {
-        row = td.parentElement.parentElement;
-        document.getElementById("visitorsList").editRow(row.rowIndex);
-        editForm();
-    }
-        // const name=document.getElementById("name"+td);
-        // const surname=document.getElementById("surname"+td);
-        // const email=document.getElementById("surname"+td);
-        // const age=document.getElementById("age"+td);
-	
-        // const name_data=name.innerHTML;
-        // const surname_data=surname.innerHTML;
-        // const email_data=email.innerHTML;
-        // const age_data=age.innerHTML;
-	
-        // name.innerHTML="<input type='text' id='name_text"+td+"' value='"+name_data+"'>";
-        // surname.innerHTML="<input type='text' id='surname"+td+"' value='"+surname_data+"'>";
-        // surname.innerHTML="<input type='text' id='surname"+td+"' value='"+surname_data+"'>";
-        // age.innerHTML="<input type='number' id='age"+td+"' value='"+age_data+"'>";
+        row = tr.parentElement.parentElement;
+        const name = row.children[0].innerHTML;
+        document.getElementById("name").value = name;
+        const surname = row.children[1].innerHTML;
+        document.getElementById("surname").value = surname;
+        const email = row.children[2].innerHTML;
+        document.getElementById("email").value = email;
+        const age = row.children[3].innerHTML;
+        document.getElementById("age").value = age;
+        row = tr.parentElement.parentElement;
+        document.getElementById("visitorsList").deleteRow(row.rowIndex);
+        }
 
 }
+
 function onDelete(td) {
     if (confirm('Ar tikrai ištrinti šį įrašą?')) {
         row = td.parentElement.parentElement;
@@ -102,15 +94,3 @@ function validate() {
     }
     return isValid;
 }
-
-// const elementDataMap = new WeakMap(formData)
-
-// const someEl = document.querySelector('#some-el')
-
-// elementDataMap.set(
-//   someEl, {
-//     prop1: 'val',
-//     prop2: someComplexValue
-// });
-
-// const elData = elementDataMap.get(formData);
