@@ -36,7 +36,7 @@ function insertNewRecord(data) {
     cell4.innerHTML = data.age;
     cell4 = newRow.insertCell(4);
     cell4.innerHTML = ` <img alt="button-icon" onClick="onEdit(this)" src="Pencil-icon.png">
-                       <a onClick="onDelete(this)">Trinti</a>`;
+                       <img alt="button-icon" onClick="onDelete(this)"src="delete-icon.png">`;
 }
 
 function resetForm() {
@@ -61,6 +61,28 @@ function updateRecord(formData) {
     selectedRow.cells[3].innerHTML = formData.age;
 }
 
+function onEdit(td) {
+    if (confirm('Taisyti įrašą?')) {
+        row = td.parentElement.parentElement;
+        document.getElementById("visitorsList").editRow(row.rowIndex);
+        editForm();
+    }
+        // const name=document.getElementById("name"+td);
+        // const surname=document.getElementById("surname"+td);
+        // const email=document.getElementById("surname"+td);
+        // const age=document.getElementById("age"+td);
+	
+        // const name_data=name.innerHTML;
+        // const surname_data=surname.innerHTML;
+        // const email_data=email.innerHTML;
+        // const age_data=age.innerHTML;
+	
+        // name.innerHTML="<input type='text' id='name_text"+td+"' value='"+name_data+"'>";
+        // surname.innerHTML="<input type='text' id='surname"+td+"' value='"+surname_data+"'>";
+        // surname.innerHTML="<input type='text' id='surname"+td+"' value='"+surname_data+"'>";
+        // age.innerHTML="<input type='number' id='age"+td+"' value='"+age_data+"'>";
+
+}
 function onDelete(td) {
     if (confirm('Ar tikrai ištrinti šį įrašą?')) {
         row = td.parentElement.parentElement;
@@ -80,4 +102,15 @@ function validate() {
     }
     return isValid;
 }
-function validate() {}
+
+// const elementDataMap = new WeakMap(formData)
+
+// const someEl = document.querySelector('#some-el')
+
+// elementDataMap.set(
+//   someEl, {
+//     prop1: 'val',
+//     prop2: someComplexValue
+// });
+
+// const elData = elementDataMap.get(formData);

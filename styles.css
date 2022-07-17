@@ -23,7 +23,7 @@ td{
     padding: 8px;
 }
 th {
-    border: 1px solid #dddddd;
+    border: 1px solid #dddddd -webkit-fill-available;
     text-align: left;
     padding: 8px;
     color: rgb(23, 5, 5);
@@ -43,8 +43,9 @@ input[type=text], input[type=email], input[type=number] {
 }
 
 input[type=submit]{
-    width: 30%;
+    width: 40% -webkit-fill-available;
     background-color: #ddd;
+    font-style: italic bold;
     color: rgb(7, 3, 3);
     padding: 14px 20px;
     margin: 8px 0;
